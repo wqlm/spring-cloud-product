@@ -8,6 +8,6 @@ public class ServerController {
 
     @GetMapping("/msg")
     public String msg() {
-        return "product msg";
+        return "product msg 1";
     }
 }
