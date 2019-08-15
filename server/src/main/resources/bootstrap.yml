@@ -1,0 +1,31 @@
+eureka:
+  client:
+    service-url:
+      # 将服务注册到 Eureka Serve 上
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: product
+   # 将数据库的配置放在 git 上
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://127.0.0.1:3306/spring_cloud?characterEncoding=utf-8&useSSL=false
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        # service-id 填 统一配置中心的服务名
+        service-id: config
+        # 找 -dev 的配置文件，在这个配置下就是去 config 服务下找 order-dev.yml 配置文件
+      profile: dev
+#  jpa:
+#    show-sql: true
+    # 将 rabbitmq 配置放到 git 上
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
